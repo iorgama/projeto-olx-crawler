@@ -1,0 +1,11 @@
+{
+  "require": {
+    "spatie/crawler": "^6.0",
+    "symfony/css-selector": "^5.2"
+  },
+  "autoload": {
+    "psr-4": {
+      "projeto_olx\\": "src/"
+    }
+  }
+}

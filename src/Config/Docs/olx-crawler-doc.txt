@@ -1,0 +1,11 @@
+*Para rodar o crawler use o seguinte comando:
+docker-compose run php php src/Config/crawler.php
+
+*Para rodar as configurações iniciais do nosso banco de dados use o seguinte comando:
+docker-compose run php php src/Config/conexao.php
+
+*Para levantar o servidor nginx:
+docker-compose up -d nginx
+
+*Para acessar:
+http://localhost:8080/
