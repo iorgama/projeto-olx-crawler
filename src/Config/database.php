@@ -4,7 +4,7 @@ namespace projeto_olx\Config;
 
 class Database
 {
-  private $database_name = "../projetodb.sqlite";
+  private $database_name = "../projetodb.db";
 
   public $conn;
 

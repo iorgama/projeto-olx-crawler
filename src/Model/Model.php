@@ -16,7 +16,7 @@ class Model
   public function getModels($brand_id)
   {
 
-    $stmt = $this->conn->prepare('SELECT description FROM model WHERE brand_id = :brand_id');
+    $stmt = $this->conn->prepare('SELECT * FROM model WHERE brand_id = :brand_id');
     $stmt->bindParam(':brand_id', $brand_id);
     $res = $stmt->execute();
 

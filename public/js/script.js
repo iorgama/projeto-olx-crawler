@@ -6,9 +6,9 @@ $(document).ready(function () {
     loadModels(brandId);
   });
 
-  $('#btnSearch').click(function () {
-    var $brandId = $('#selectBrand');
-    var $modelId = $('#selectModel');
+  $('#btnSearch').click(function (event) {
+    event.preventDefault();
+    var modelId = $('#selectModel').val();
     loadAds(modelId);
   });
 });
@@ -75,6 +75,21 @@ function loadModels(brandId) {
           });
         }),
       );
+    },
+    error: function (error) {
+      console.log(error);
+    },
+  });
+}
+
+function loadAds(modelId) {
+  console.log(modelId);
+  $.ajax({
+    url: 'api/getAds/' + modelId,
+    type: 'GET',
+    dataType: 'JSON',
+    success: function (data) {
+      console.log(data);
     },
     error: function (error) {
       console.log(error);

@@ -1,6 +1,6 @@
 <?php
 try {
-  $db = new SQLite3('projetodb.sqlite', SQLITE3_OPEN_CREATE | SQLITE3_OPEN_READWRITE);
+  $db = new SQLite3('projeto.db', SQLITE3_OPEN_CREATE | SQLITE3_OPEN_READWRITE);
 
   // Create tables
   $db->query(

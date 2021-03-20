@@ -23,6 +23,11 @@ Route::add('/api/getModels/(.*)', function ($brandId) {
   echo $api->getModels($brandId);
 }, 'get');
 
+Route::add('/api/getAds/(.*)', function ($modelId) {
+  $api = new AppController();
+  echo $api->getAds($modelId);
+}, 'get');
+
 
 // // Post route example
 // Route::add('/contact-form', function () {

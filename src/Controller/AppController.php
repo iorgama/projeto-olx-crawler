@@ -8,6 +8,7 @@ use projeto_olx\Config\Database;
 
 use projeto_olx\Model\Brand;
 use projeto_olx\Model\Model;
+use projeto_olx\Model\Ad;
 
 class AppController
 {
@@ -31,5 +32,11 @@ class AppController
   {
     $this->model = new Model($this->db->getConnection());
     return json_encode($this->model->getModels($brandId));
+  }
+
+  public function getAds($modelId)
+  {
+    $this->model = new Ad($this->db->getConnection());
+    return json_encode($this->model->getAds($modelId));
   }
 }
