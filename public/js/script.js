@@ -88,8 +88,21 @@ function loadAds(modelId) {
     url: 'api/getAds/' + modelId,
     type: 'GET',
     dataType: 'JSON',
+    beforeSend: function () {
+      const $table = $('.container').find('table');
+      $table.remove();
+    },
     success: function (data) {
-      console.log(data);
+      const $table = $('<table>', { class: 'table table-hover' });
+
+      $table
+        .append($('<tr><th>Description</th></tr>'))
+        .append(
+          data.map(function (ad) {
+            return $('<tr><td>' + ad.description + '</td></tr>');
+          }),
+        )
+        .appendTo('.container');
     },
     error: function (error) {
       console.log(error);
